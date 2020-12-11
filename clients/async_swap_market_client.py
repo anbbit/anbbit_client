@@ -13,17 +13,14 @@ class AnbbitSwapMarketClient(AsyncAnbbitClient):
 
     async def market_orderbook(self, symbol, level='ALL'):
         path = f'/market/orderbook/{symbol}/{level}'
-        print(f'market_orderbook path={path}')
         return await self.public_request(path)
 
     async def market_trade(self, symbol):
         path = f'/market/trade/{symbol}'
-        print(f'market_trade path={path}')
         return await self.public_request(path)
 
     async def market_ticker(self, symbol):
         path = f'/market/ticker/{symbol}'
-        print(f'market_ticker path={path}')
         return await self.public_request(path)
 
     async def market_kline(self, symbol, interval, begin_tm=None, end_tm=None):
@@ -33,5 +30,4 @@ class AnbbitSwapMarketClient(AsyncAnbbitClient):
             params['begin'] = begin_tm
         if end_tm:
             params['end'] = end_tm
-        print(f'market_kline path={path}, params={params}')
         return await self.public_request(path, params=params)
