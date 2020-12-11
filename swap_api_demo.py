@@ -9,8 +9,8 @@ def test_swap():
 
     swap_client = AnbbitSwapClient(api_key=API_KEY, api_secret=API_SECRET)
 
-    # data = swap_client.signature_test()
-    # print("signature_test result=", data['auth'])
+    data = swap_client.signature_test()
+    print("signature_test result=", data['auth'])
 
     # res = swap_client.list_accounts()
     # print({'account_list': res})

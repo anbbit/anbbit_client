@@ -18,7 +18,6 @@ class AnbbitSwapClient(AnbbitClient):
     def list_accounts(self):
         path = '/account/list'
         data = {}
-        print(f'list_position path={path}, data={data}')
         return self.private_post_request(path, data)
 
     def list_account_state(self, symbol):
@@ -26,7 +25,6 @@ class AnbbitSwapClient(AnbbitClient):
         data = {
             'symbol': symbol
         }
-        print(f'list_position path={path}, data={data}')
         return self.private_post_request(path, data)
 
     def update_account_leverage(self, symbol, leverage, direction):
@@ -36,13 +34,11 @@ class AnbbitSwapClient(AnbbitClient):
             'leverage': leverage,
             'direction': direction
         }
-        print(f'list_position path={path}, data={data}')
         return self.private_post_request(path, data)
 
     def list_position(self, symbol):
         path = '/position'
         data = {'symbol': symbol}
-        print(f'list_position path={path}, data={data}')
         return self.private_post_request(path, data)
 
     def create_order(self, symbol, qty, price, trade_type, amount=0, _type='limit', account_type='swap'):

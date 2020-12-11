@@ -8,6 +8,8 @@ MAX_TRADE_FEE_RATE = Decimal("0.005")
 MIN_TRADE_FEE_RATE = Decimal("-0.005")
 FAK_RATE = 0.03
 
+TM_MS_ONE_DAY = 24 * 3600 * 1000
+
 ANBBIT_API_HOST = 'https://api.anbbit.com'
 ANBBIT_MARKET_HOST = 'https://market.anbbit.com'
 

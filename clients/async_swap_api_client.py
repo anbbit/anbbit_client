@@ -20,14 +20,12 @@ class SwapAnbbitClient(AsyncAnbbitClient):
         data = {
             'symbol': symbol
         }
-        print(f'list_position path={path}, data=%s', data)
         return await self.private_post_request(path, data)
 
     # 合约账户详情
     async def list_account_state(self):
         path = '/account/state'
         data = {}
-        print(f'list_position path={path}, data={data}')
         return await self.private_post_request(path, data)
 
     async def update_account_leverage(self, symbol, leverage, direction):
@@ -37,13 +35,11 @@ class SwapAnbbitClient(AsyncAnbbitClient):
             'leverage': leverage,
             'direction': direction
         }
-        print(f'list_position path={path}, data={data}')
         return await self.private_post_request(path, data)
 
     async def list_position(self, symbol):
         path = '/position'
         data = {'symbol': symbol}
-        print(f'list_position path={path}, data={data}')
         return await self.private_post_request(path, data)
 
     async def create_order(self, symbol, qty, price, trade_type, amount=0, _type='limit', account_type='swap'):

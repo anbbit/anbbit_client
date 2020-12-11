@@ -38,7 +38,7 @@ class AnbbitClient(object):
     @staticmethod
     def send_request(url, json=None, params=None, data=None, method='POST', headers=None):
         ret = requests.request(method=method, url=url, params=params, json=json, data=data, headers=headers)
-        print(f'send_request, url={ret.url}')
+        print(f'request information: \n\turl    = {ret.url}, \n\tparams = {params}, \n\tdata   = {data}')
         if ret.status_code == 200:
             return ret.json()
         else:
@@ -85,7 +85,7 @@ class AsyncAnbbitClient(AnbbitClient):
         async with aiohttp.ClientSession() as session:
             async with session.request(method=method, url=url, json=json, params=params,
                                        data=data, headers=headers) as response:
-                print(f'send_request, url={response.url}')
+                print(f'request information: \n\turl    = {response.url}, \n\tparams = {params}, \n\tdata   = {data}')
                 ret = await response.json()
             return ret
 
